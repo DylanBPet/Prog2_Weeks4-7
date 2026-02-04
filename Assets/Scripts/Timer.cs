@@ -25,10 +25,11 @@ public class Timer : MonoBehaviour
             timerValue = 0;
             timerFill.color = Color.white;
         }
-        else if(timerValue > 5)
+        else if(timerValue >= 5)
         {
-            timerFill.color = Color.red;
+            timerFill.color = Color.yellow;
         }
+
 
             timerVisuals.value = timerValue;
 
