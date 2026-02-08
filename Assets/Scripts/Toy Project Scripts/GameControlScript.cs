@@ -51,7 +51,10 @@ public class RandomPoseSpawnerScript : MonoBehaviour
     public GameObject backGroundsAndPlayer;
     public GameObject startingScreen;
     public GameObject failScreen;
-  ///////////////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////
+
+    //This will be the gameobject with the timer script on. So when it is turned off the timer stops counting
+    public GameObject timerStop;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -162,6 +165,7 @@ public class RandomPoseSpawnerScript : MonoBehaviour
         //Turn on all gameplay Elements
         mainGameUI.SetActive(true);
         backGroundsAndPlayer.SetActive(true);
+        timerStop.SetActive(true);
 
         //Turn off none gameplay Elements
         startingScreen.SetActive(false);
@@ -200,6 +204,7 @@ public class RandomPoseSpawnerScript : MonoBehaviour
         mainGameUI.SetActive(false);
         backGroundsAndPlayer.SetActive(false);
         failScreen.SetActive(false);
+        timerStop.SetActive(false);
 
         //Turn on Starting Screen UI
         startingScreen.SetActive(true);
