@@ -7,6 +7,7 @@ public class ContactSensor : MonoBehaviour
     public bool isInHazard = false;
 
     public UnityEvent OnEnterSensor;
+    public UnityEvent OnExitSensor;
 
     public UnityEvent<float> OnRandomNumber;
 
@@ -40,10 +41,12 @@ public class ContactSensor : MonoBehaviour
                 //you were in hazard last frame, but not anymore
                 isInHazard = false;
                 OnRandomNumber.Invoke(Random.Range(0, 10));
+               
             }
             else
             {
                 //you are still outside the hazard
+                OnExitSensor.Invoke();
             }
         }
 
